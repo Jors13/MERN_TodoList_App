@@ -1,0 +1,7 @@
+-Change Deprecated MongoDB(moongose) query's
+-Add a Update Email 
+-Add A Message to User Say user is that email are already used
+-Add Res status code to the all Server
+-Add a strong password validate
+-Add a max quiantity of 10 list and 10 todos 
+

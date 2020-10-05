@@ -1,0 +1,24 @@
+/*Home START*/
+
+/*div {
+	word-break: break-all;
+}*/
+
+.Todo {
+	word-break: break-all;
+}
+
+.logButton a {
+	color: #8590aa;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
+	font-weight: 600px;
+}
+
+.logButton a:hover {
+	color: #3b8beb;
+	text-decoration: none;
+	transform: scale(1.1);
+}
+
+/*Home END*/

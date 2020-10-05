@@ -1,0 +1,10 @@
+-Add Routes To XLogin, XHome, XSignIn, XDashboard, About
+-Add Diferent Themes Button to Material Ui(Dark Mode or Somethings)
+-Add a Cool Visual Effects or Background on Home Page
+-Add 404 Page with React Router
+-Resolve Dispatch and dataLoaded Warning
+-Make Responsive Background images
+-Perform Width and view of forms
+-Perform Typografy and Buttons Iteracctions
+-Perform Notify
+-Add a notify-button to erase delete action of user in case of error
