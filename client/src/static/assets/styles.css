@@ -21,4 +21,14 @@
 	transform: scale(1.1);
 }
 
+.credits a {
+	color: white;
+	text-decoration: none;
+}
+
+.credits a:hover {
+	color: white;
+	text-decoration: none;
+}
+
 /*Home END*/

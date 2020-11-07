@@ -8,6 +8,7 @@ import {
 	Typography,
 	Container,
 	Grid,
+	Card,
 	CardMedia
 } from "@material-ui/core";
 
@@ -18,14 +19,16 @@ import background from "../static/assets/img/people-using-online-appointment-boo
 const Home = props => {
 	return (
 		<Container disableGutters={true}>
-			<Grid container direction="column" justify="center" alignItems="center">
-				<AppBar position="static" className="Navbar-top">
+			<Grid container direction="column" justify="center" alignItems="center" spacing={5}>
+				<AppBar position="fixed" className="Navbar-top" style={{ top: 0 }}>
 					<Toolbar>
-						<Grid item xs={6}>
-							<Typography variant="h6">TodoList App</Typography>
+						<Grid container item xs={2} justify="flex-start">
+							<Typography variant="h6">TodoList</Typography>
 						</Grid>
 
-						<Grid container item xs={6} justify="flex-end">
+						<Grid container item xs={6} justify="flex-start"></Grid>
+
+						<Grid container item xs={4} justify="flex-end">
 							<ButtonGroup variant="contained">
 								<Button className="logButton">
 									<Link to="/login">LogIn</Link>
@@ -38,35 +41,33 @@ const Home = props => {
 					</Toolbar>
 				</AppBar>
 
-				<Grid item style={{ marginTop: "5%" }}>
-					<CardMedia
-						component="img"
-						alt="Home background"
-						height="400"
-						image={background}
-						title="Home background"
-					/>
+				<Grid item xs={12} style={{ marginTop: "20vh" }}>
+					<Card style={{ boxShadow: "none" }}>
+						<CardMedia
+							component="img"
+							alt="Home background"
+							image={background}
+							title="Home background"
+						/>
+					</Card>
 				</Grid>
 
 				<AppBar
-					position="static"
+					position="fixed"
 					className="Navbar-bot"
-					style={{ marginTop: "5%", paddingTop: "15px", paddingBottom: "15px" }}
+					style={{ bottom: 0, top: "auto" }}
 				>
 					<Grid container item justify="center">
-						<Typography variant="subtitle1">
-							<a
-								href="https://www.freepik.com/free-photos-vectors/school"
-								style={{ textDecoration: "none" }}
-							>
+						<Typography className="credits" variant="subtitle1" align="center">
+							<a href="https://www.freepik.com/free-photos-vectors/school">
 								All Vectors was created by pch.vector, take a look on www.freepik.com
 							</a>
 						</Typography>
 					</Grid>
 					<Grid container item justify="center">
-						<Typography variant="subtitle2">
-							The Developer of entire this application it's Jorge A. Ocaris A. Contact and
-							Work(Github) or Talk with Me on Facebook,Twitter
+						<Typography className="info" variant="subtitle2" align="center">
+							The Developer of entire this application it's Jorge Ocaris, Contact and
+							Work(Github) or just say Hi on Facebook, Twitter and Instagram.
 						</Typography>
 					</Grid>
 				</AppBar>
