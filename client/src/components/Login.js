@@ -160,8 +160,21 @@ const Login = () => {
 								<p></p>
 							</Grid>
 
-							<Grid item>
-								<Link to="/signIn">SignIn</Link>
+							<Grid container item justify="center" alignItems="center">
+								<Link to="/signIn" style={{ textDecoration: "none" }}>
+									<Button
+										variant="outlined"
+										color="secondary"
+										style={{ margin: "0 10px 10px 10px" }}
+									>
+										Sign In
+									</Button>
+								</Link>
+								<Link to="#" style={{ textDecoration: "none" }}>
+									<Button disabled style={{ margin: "0 10px 10px 10px" }}>
+										Recover password
+									</Button>
+								</Link>
 								{/*<Link to="/signIn">Recover Password</Link>*/}
 							</Grid>
 						</Grid>

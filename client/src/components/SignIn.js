@@ -16,7 +16,9 @@ import {
 	Container,
 	Button,
 	TextField,
-	CircularProgress
+	CircularProgress,
+	Card,
+	CardMedia
 } from "@material-ui/core";
 
 import { Alert } from "@material-ui/lab";
@@ -73,7 +75,14 @@ const SignIn = () => {
 
 					<Grid container direction="row" justify="center" alignItems="center">
 						<Grid container item xs={12} sm={12} md={6} lg={6} xl={6} justify="center">
-							<img alt="Background" height={450} width={700} src={background} />
+							<Card style={{ boxShadow: "none" }}>
+								<CardMedia
+									component="img"
+									alt="Home background"
+									image={background}
+									title="Home background"
+								/>
+							</Card>
 						</Grid>
 
 						<Grid item xs={12} sm={12} md={2} lg={1} xl={1}>
@@ -207,7 +216,15 @@ const SignIn = () => {
 							<p></p>
 						</Grid>
 
-						<Link to="/login">Login</Link>
+						<Link to="/login" style={{ textDecoration: "none" }}>
+							<Button
+								variant="outlined"
+								color="secondary"
+								style={{ margin: "0 10px 10px 10px" }}
+							>
+								Login
+							</Button>
+						</Link>
 					</Grid>
 				</Container>
 			</form>
