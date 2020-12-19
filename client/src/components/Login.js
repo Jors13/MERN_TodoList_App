@@ -195,22 +195,19 @@ const Login = () => {
 						<CircularProgress />
 					</Grid>
 				</Grid>
-
-				<Grid container direction="row" justify="flex-end" alignItems="flex-end">
-					<Grid
-						item
-						style={{
-							position: "absolute",
-							margin: "0",
-							bottom: "40%",
-							display: message !== "" ? "block" : "none"
-						}}
-					>
-						<Alert variant="filled" severity={messageType} onClose={handleCloseMessage}>
-							{message}
-						</Alert>
-					</Grid>
-				</Grid>
+				
+				{/* NOTIFY UI*/}
+				<Alert 
+				className="notifyButton" 
+					style={{
+						display: message !== "" ? "flex" : "none"
+					}} 
+					variant="filled" 
+					severity={messageType} 
+					onClose={handleCloseMessage}
+				>
+					{message}
+				</Alert>
 			</div>
 		);
 	}

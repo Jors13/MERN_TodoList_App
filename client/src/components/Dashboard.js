@@ -17,7 +17,9 @@ import {
 	Typography,
 	Container,
 	Grid,
-	CircularProgress
+	CircularProgress,
+	Card,
+	CardMedia
 } from "@material-ui/core";
 
 import { Alert } from "@material-ui/lab";
@@ -94,10 +96,21 @@ const Dashboard = () => {
 	};
 
 	return (
-		<div>
+		<>
+			{/* LOADER UI */}
+			<Grid container justify="center">
+				<Grid
+					item
+					style={{
+						position: "absolute",
+						display: loading ? "block" : "none"
+					}}
+				>
+					<CircularProgress />
+				</Grid>
+			</Grid>
 			<Container
 				style={{
-					position: "relative",
 					opacity: loading ? 0.5 : 1,
 					pointerEvents: loading ? "none" : "auto"
 				}}
@@ -106,7 +119,7 @@ const Dashboard = () => {
 					<AppBar position="static" className="Navbar-top">
 						<Toolbar>
 							<Grid item xs={6}>
-								<Typography variant="h6">Todo App</Typography>
+								<Typography variant="h6">Todo</Typography>
 							</Grid>
 
 							<Grid container item xs={6} justify="flex-end">
@@ -143,8 +156,15 @@ const Dashboard = () => {
 				{state.userlist.length <= 9 ? <AddListButton /> : null}
 
 				{state.userlist.length === 0 ? (
-					<Grid container item justify="center">
-						<img alt="Hola Mundo" height={510} width={750} src={backgroundTodo} />
+					<Grid container item xs={12} justify="center">
+						<Card style={{ boxShadow: "none" }}>
+							<CardMedia
+								component="img"
+								alt="Home background"
+								image={backgroundTodo}
+								title="Home background"
+							/>
+						</Card>
 					</Grid>
 				) : null}
 
@@ -165,36 +185,34 @@ const Dashboard = () => {
 				</Carousel>
 			</Container>
 
-			{/*Message and Loader UI */}
-			<Grid container justify="center">
-				<Grid
-					item
-					style={{
-						position: "absolute",
-						margin: "0",
-						top: "50%",
-						display: loading ? "block" : "none"
-					}}
-				>
-					<CircularProgress />
-				</Grid>
+			{/*Loader UI */}
+            <Grid container justify="center">
+                <Grid
+                    item
+                    style={{
+							position: "absolute",
+							margin: "0",
+							top: "50%",
+							display: loading ? "block" : "none"
+                    	}}
+                    >
+                    <CircularProgress />
+                </Grid>
 			</Grid>
 
-			<Grid container direction="row" justify="flex-end" alignItems="flex-end">
-				<Grid
-					item
-					style={{
-						position: "absolute",
-						margin: "0",
-						display: message !== "" ? "block" : "none"
-					}}
-				>
-					<Alert variant="filled" severity={messageType} onClose={handleCloseMessage}>
-						{message}
-					</Alert>
-				</Grid>
-			</Grid>
-		</div>
+			{/* Notify UI */}
+			<Alert 
+				className="notifyButton" 
+				style={{  
+					display: message !== "" ? "flex" : "none"
+				}}
+				variant="filled"
+				severity={messageType} 
+				onClose={handleCloseMessage}
+			>
+				{message}
+			</Alert>
+		</>
 	);
 };
 

@@ -32,3 +32,19 @@
 }
 
 /*Home END*/
+
+/* NOTIFY BUTTON POSITION */
+
+.notifyButton {
+	position: absolute;
+	top: 90vh;
+	right: 0;
+	margin-right: 10px;
+}
+
+/* Sign In POSITION */
+@media only screen and ( max-width: 960px ){
+	.notifyButton {
+		top: 150vh;
+	}
+}

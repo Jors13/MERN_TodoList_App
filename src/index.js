@@ -34,12 +34,12 @@ app.use(passport.session());
 //Routes
 app.use("/api/users", require("./routes/api/users"));
 
-//Production Statis serve(Heroku)
+//Production Static serve(Heroku)
 if (process.env.NODE_ENV === "production") {
 	// Static Folder
-	app.use(express.static("client/build"));
-	app.get("/", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "..", "client", "build", "index.html"));
+	app.use(express.static(path.join(__dirname, '../client/build')));
+	app.get("*", (req, res) => {
+		res.sendFile(path.join(__dirname, '../client/build/index.html'));
 	});
 }
 
