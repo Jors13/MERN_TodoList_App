@@ -246,7 +246,7 @@ const SignIn = () => {
 
 			{/* NOTIFY UI */}
 			<Alert
-				className="notifyButton"
+				className="notifyButton signIn"
 				style={{ 
 					display: message !== "" ? "flex" : "none"
 				}}

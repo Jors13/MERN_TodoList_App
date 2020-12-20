@@ -97,18 +97,6 @@ const Dashboard = () => {
 
 	return (
 		<>
-			{/* LOADER UI */}
-			<Grid container justify="center">
-				<Grid
-					item
-					style={{
-						position: "absolute",
-						display: loading ? "block" : "none"
-					}}
-				>
-					<CircularProgress />
-				</Grid>
-			</Grid>
 			<Container
 				style={{
 					opacity: loading ? 0.5 : 1,
